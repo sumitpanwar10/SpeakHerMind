@@ -22,9 +22,9 @@ export default async function handler(
             where: { email: session?.user?.email },
         })
         //Check title
-        if (title.length > 300) {
-            return res.status(403).json({ message: "Please write a shorter post" })
-        }
+        // if (title.length > 3000) {
+        //     return res.status(403).json({ message: "Please write a shorter post" })
+        // }
 
         if (!title.length) {
             return res
