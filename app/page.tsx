@@ -3,6 +3,7 @@ import axios from "axios"
 import AddPost from "./components/AddPost"
 import { useQuery } from '@tanstack/react-query'
 import Post from "./components/Post"
+import { Key } from "react"
 //fetch all posts
 const allPosts = async ()=> {
   const response = await axios.get("/api/posts/getPosts")
@@ -20,7 +21,7 @@ export default function Home() {
   return ( 
     <div>
       <AddPost />
-      {data?.map((post) => (
+      {data?.map((post: { id: Key | null | undefined; user: { id: any; image: any }; title: any; comments: any }) => (
         <Post
           key={post.id}
           id={post.id}

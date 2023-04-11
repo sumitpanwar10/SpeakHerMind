@@ -10,13 +10,13 @@ export default async function handler(req: { method: string }, res: { status: (a
             const data = await prisma.post.findMany({
                 include:{
                     user:true,
+                    comment:true,
                 },
                 orderBy:{
                     createdAt: "desc",
                 },
             })
             res.status(200).json(data)
-            console.log("data fetched")
         } catch (err) {
             res.status(403).json({ err: "Error has occured while fetching post." })
         }

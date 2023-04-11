@@ -10,16 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Post {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String
-  content   String? //mayberemovedafter
-  published Boolean  @default(false)
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-}
+
 
 model Account {
   id                String  @id @default(cuid())
@@ -58,6 +49,29 @@ model User {
   accounts      Account[]
   sessions      Session[]
   posts         Post[]
+  comment       Comment[]
+}
+
+model Post {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  title     String
+  content   String? //mayberemovedafter
+  published Boolean  @default(false)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  comment      Comment[]
+}
+
+model Comment {
+  id String @id @default(cuid())
+  message String
+  postId String
+  userId String
+  createdAt DateTime @default(now())
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id])
 }
 
 model VerificationToken {

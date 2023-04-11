@@ -11,7 +11,7 @@ export default async function Nav() {
 
     <nav className="flex justify-between items-center py-8">
         <Link href={"/"}>
-        <h1 className="font-bold text-lg text-pink-950">SpeakHerMind</h1>
+                <h1 className="font-bold text-xl text-yellow-400">SpeakHerMind</h1>
         </Link>
         <ul>
             {!session?.user && <Login />}
