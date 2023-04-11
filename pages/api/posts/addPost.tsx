@@ -31,7 +31,7 @@ export default async function handler(
                 .status(403)
                 .json({ message: "Please write something before we can post it." })
         }
-
+        
         //Create Post
         try {
             const result = await prisma.post.create({
