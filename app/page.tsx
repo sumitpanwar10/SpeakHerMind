@@ -1,7 +1,7 @@
 'use client'
 import axios from "axios"
 import AddPost from "./components/AddPost"
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from 'react-query'
 import Post from "./components/Post"
 import { Key } from "react"
 import { PostType } from "./Types/Post"
