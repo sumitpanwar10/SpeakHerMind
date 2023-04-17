@@ -5,7 +5,9 @@ import { useMutation, useQueryClient } from "react-query"
 import axios, { AxiosError } from "axios"
 import toast from 'react-hot-toast'
 let toastPostID: string
+
 export default function CreatePost() {
+    const queryClient = useQueryClient()
     const [title, setTitle] = useState("")
     const [isDisabled, setIsDisabled] = useState(false)
 
@@ -23,6 +25,7 @@ export default function CreatePost() {
             },
             onSuccess: (data) => {
                 toast.success('Your confession has been made 😃', {id: toastPostID})
+                queryClient.invalidateQueries(["posts"])
                 setTitle("")
                 setIsDisabled(false)
             }
@@ -54,7 +57,7 @@ export default function CreatePost() {
             <div>
                 <button
                     disabled={isDisabled}
-                    className="txt-sm bg-sky-400 text-white py-2 px-6 rounded-xl disabled:opacity-25"
+                    className="text-sm bg-sky-400 text-white py-2 px-6 rounded-xl disabled:opacity-25"
                     type="submit"
                 >Post</button>
             </div>

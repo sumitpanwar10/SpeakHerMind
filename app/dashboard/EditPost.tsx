@@ -6,7 +6,8 @@ import { MdDelete } from 'react-icons/md'
 import { useMutation, useQueryClient } from "react-query"
 import toast from "react-hot-toast"
 import axios from "axios"
-import { icons } from "react-icons/lib"
+import Toggle from "./Toggle"
+
 
 
 type EditProps = {
@@ -37,6 +38,7 @@ export default function EditPost({
         {
             onError: (error: any) => {
                 console.log(error)
+            toast.error("Error caught while deleting the post.", { id: deleteToastID })
             },
             onSuccess: (data: any) => {
                 console.log(data)
@@ -52,24 +54,33 @@ export default function EditPost({
     }
 
     return (
-        <div className="bg-white my-8 p-8 rounded-lg">
+        <>
+            <div className="bg-white my-8 p-8 rounded-lg">
 
-            <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2">
 
-                <h3 className="font-bold text-gray-700">{name}</h3>
+                    <h3 className="font-bold text-gray-700">{name}</h3>
+                </div>
+                <div className="my-8 ">
+                    <p className="break-all">{title}</p>
+
+                </div>
+                <div className="flex items-center justify-between ">
+                    <p className=" text-sm font-bold text-gray-600">
+                        {comment?.length} Comments
+                    </p>
+                    <button 
+                    onClick={(e)=>{
+                    setToggle(true)
+                    }} 
+                    className="text-xl text-red-500">
+                      <MdDelete />
+                    </button>
+
+                </div>
+
             </div>
-            <div className="my-8 ">
-                <p className="break-all">{title}</p>
-
-            </div>
-            <div className="flex items-center justify-between ">
-                <p className=" text-sm font-bold text-gray-600">
-                    {comment?.length} Comments
-                </p>
-                <button className="text-xl text-gray-900"><MdDelete /></button>
-
-            </div>
-
-        </div>
+            {toggle && < Toggle deletePost={deletePost} setToggle={setToggle }/>}
+        </>
     )
 }
