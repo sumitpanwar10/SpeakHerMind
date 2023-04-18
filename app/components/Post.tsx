@@ -18,7 +18,7 @@ export default function Post({ id, name, postTitle, comment }:PostProps) {
         <div className="flex items-center gap-2">
           {/* <h3 className="font-bold text-gray-700">Anonymous</h3> */}
           
-            <h3 className="font-bold text-gray-700">Whisperer-{name.substr(0, 5)}</h3>
+            <h3 className="font-bold text-gray-700">Whisperer-{name.substring(0, 5)}</h3>
           
           
         </div>

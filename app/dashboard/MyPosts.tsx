@@ -24,7 +24,7 @@ export default function MyPosts(): JSX.Element {
                 <EditPost
                     id={post.id}
                     key={post.id}
-                    name={data.name}
+                    name={data.id}
                     title={post.title}
                     comment={post.comment}
                 />

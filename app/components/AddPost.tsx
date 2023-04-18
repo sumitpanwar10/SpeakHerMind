@@ -59,7 +59,9 @@ export default function CreatePost() {
                     disabled={isDisabled}
                     className="text-sm bg-sky-400 text-white py-2 px-6 rounded-xl disabled:opacity-25"
                     type="submit"
-                >Post</button>
+                >
+                    Post
+                </button>
             </div>
         </form>
     )
