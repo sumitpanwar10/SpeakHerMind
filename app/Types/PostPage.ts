@@ -8,7 +8,7 @@ export type PostPageType = {
         name: string
     }
     comment: {
-        message: ReactNode
+        message: string
         createdAt?: string
         id: string
         postId: string
