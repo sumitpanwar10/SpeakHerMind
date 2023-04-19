@@ -56,7 +56,7 @@ export default function AddComment({id}: PostProps){
                     name='title'
                     type="text"
                     value={title}
-                    placeholder="Feel free to confess..."
+                    placeholder="Add your comment here"
                     className="p-4 text-lg rounded-md my-2 bg-gray-200"
                 
                 />
