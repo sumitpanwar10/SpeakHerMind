@@ -45,7 +45,6 @@ export default function PostDetail(url: URL) {
                         <h3 className="font-bold">Whisperer-{comment?.user?.id.substring(0, 5)}</h3>
                         <h2 className="text-sm">{comment.createdAt}</h2>
                     </div>
-
                     <div className="py-4">{comment.message}</div>
                 </div>
             ))}

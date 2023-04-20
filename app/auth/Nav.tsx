@@ -5,6 +5,7 @@ import Logged from "./Logged"
 import { CgProfile } from "react-icons/cg"
 import { getServerSession } from  "next-auth/next"
 import { authOptions } from "../../pages/api/auth/[...nextauth]"
+import { MdOutlineSupportAgent } from "react-icons/md"
 export default async function Nav() {
     const session = await getServerSession(authOptions)
     console.log(session)
@@ -16,14 +17,18 @@ export default async function Nav() {
         </Link>
         
         <div className="flex justify-center gap-6 items-center">
-                <ul>
-                    {!session?.user && <Login />}
-                    {session?.user && <Logged />}
-
-                </ul>
                 <Link href={`/dashboard`} className="text-4xl text-yellow-400">
                     <CgProfile />
                 </Link>
+                <Link href={`/help`} className="text-4xl text-yellow-400">
+                    <MdOutlineSupportAgent />
+                </Link>
+                <ul>
+                    {!session?.user && <Login />}
+                    {session?.user && <Logged />}
+                    
+                </ul>
+                
         </div>
     </nav>
     )
