@@ -4,5 +4,13 @@ const nextConfig = {
     appDir: true,
   },
 }
+export function webpack(config) {
+  config.resolve.fallback = {
+    ...config.resolve.fallback,
+    "supports-color": require.resolve("supports-color"),
+  };
 
-module.exports = nextConfig
+  return config;
+}
+
+export default nextConfig
