@@ -7,6 +7,7 @@ import { useMutation, useQueryClient } from "react-query"
 import toast from "react-hot-toast"
 import axios from "axios"
 import Toggle from "./Toggle"
+import Link from "next/link"
 
 
 
@@ -66,9 +67,11 @@ export default function EditPost({
 
                 </div>
                 <div className="flex items-center justify-between ">
+                    <Link href={`/post/${id}`}>
                     <p className=" text-sm font-bold text-gray-600">
                         {comment?.length} Comments
                     </p>
+                    </Link>
                     <button 
                     onClick={(e)=>{
                     setToggle(true)

@@ -29,10 +29,10 @@ export default function PostDetail(url: URL) {
     return (
         <div>
             <Post
-                id={data?.id}
-                name={data?.user.id}
-                postTitle={data?.title}
-                comment={data?.comment}
+                id={data?.id ?? ''}
+                name={data?.user.id ?? ''}
+                postTitle={data?.title ?? ''}
+                comment={data?.comment ?? []}
             />
             <AddComment id={data?.id} />
             {data?.comment?.map((comment) => (
