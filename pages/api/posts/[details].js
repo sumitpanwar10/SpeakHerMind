@@ -1,9 +1,10 @@
 import prisma from "../../../prisma/client"
-import type { NextApiRequest, NextApiResponse } from "next"
+// import type { NextApiRequest, NextApiResponse } from "next"
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse) {
+export default async function handler(req, res
+  // req: NextApiRequest,
+  // res: NextApiResponse
+  ) {
   if (req.method === "GET") {
     try {
       const data = await prisma.post.findUnique({

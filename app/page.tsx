@@ -1,13 +1,13 @@
 'use client'
 import axios from "axios"
-import AddPost from "./components/AddPost"
+import AddPost from "./AddPost"
 import { useQuery } from 'react-query'
-import Post from "./components/Post"
+import Post from "./Post"
 import { Key } from "react"
 import { PostType } from "./Types/Post"
 
 //fetch all posts
-const allPosts = async ()=> {
+const allPosts = async () => {
   const response = await axios.get("/api/posts/getPosts")
   return response.data
 }
@@ -18,9 +18,9 @@ export default function Home() {
   })
   if (error) return <div>error</div>
   if (isLoading) return <div>Loading...</div>
-  
-  
-  return ( 
+
+
+  return (
     <div>
       <AddPost />
       {data?.map((post) => (
@@ -30,8 +30,8 @@ export default function Home() {
           name={post.user.id}
           // avatar={post.user.image}
           postTitle={post.title}
-          comment={post.comment}     />
-        ))}
+          comment={post.comment} />
+      ))}
     </div>
   )
 }
