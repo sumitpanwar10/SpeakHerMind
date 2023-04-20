@@ -3,14 +3,9 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-}
-export function webpack(config) {
-  config.resolve.fallback = {
-    ...config.resolve.fallback,
-    "supports-color": require.resolve("supports-color"),
-  };
-
-  return config;
+  images: {
+    domains: ["lh3.googleusercontent.com", "avatars.githubusercontent.com"],
+  },
 }
 
-export default nextConfig
+module.exports = nextConfig
