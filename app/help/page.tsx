@@ -1,5 +1,5 @@
 'use client'
-
+import Link from "next/link"
 export default function Help(){
     
     return (
@@ -82,32 +82,7 @@ export default function Help(){
                     </div>
                 </div>
             </div>
-            {/* <div className="bg-white/20 rounded-md p-4">
-                <table className="table-auto">
-                    <thead>
-                        
-                        <tr className="text-sky-400">
-                            <th>Organization</th>
-                            <th>Contact</th>
-                        </tr>
-                    </thead>
-                    <tbody className="text-white">
-                        <tr>
-                            <td className="text-left">National Commission for Women Helpline</td>
-                            <td className="text-right">7827170170</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Shakti Shalini</td>
-                            <td>10920</td>  
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div> */}
+            <p className="text-gray-400 text-sm p-4">All helplines are provided by <Link className="text-sky-400" href="http://www.ncw.nic.in/"  target="_blank">National Commission for Women</Link>.</p>
         </div>  
         
     )
