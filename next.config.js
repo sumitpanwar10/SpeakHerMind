@@ -1,5 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
+  serverComponents: true,
   experimental: {
     appDir: true,
     esmExternals: 'loose',
