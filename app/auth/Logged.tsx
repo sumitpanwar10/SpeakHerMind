@@ -9,7 +9,7 @@ export default function Logged(){
         <li className="flex gap-8 items-center">
             <button 
                 onClick={() => signOut()}
-                className="text-sm bg-yellow-400 text-gray-900 py-2 px-6 rounded-xl disabled:opacity-25"
+                className="text-sm bg-sky-400 text-gray-900 py-2 px-6 rounded-xl disabled:opacity-25"
             >
                 Sign Out
             </button>
