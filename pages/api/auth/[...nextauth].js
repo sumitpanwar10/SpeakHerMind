@@ -13,8 +13,9 @@ export const authOptions ={
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-            secret: process.env.AUTH_SECRET,
-            secret: process.env.NEXT_PUBLIC_SECRET,
+            // secret: process.env.AUTH_SECRET,
+            secret: process.env.NEXTAUTH_SECRET,
+
 
 
             async callback({ token, account, user }) {
