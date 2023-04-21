@@ -8,11 +8,15 @@ const adapter = PrismaAdapter(prisma)
 
 export const authOptions ={
     adapter: PrismaAdapter(prisma),
+    
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
             secret: process.env.AUTH_SECRET,
+            secret: process.env.NEXT_PUBLIC_SECRET,
+
+
             async callback({ token, account, user }) {
                 console.log('Executing callback function')
                 const anonymousId = `anonymous-${uuidv4().substr(0, 5)}`;
@@ -35,6 +39,7 @@ export const authOptions ={
             }
         }),
     ],
+    
     // callbacks: {
     //     async signIn(user, account, profile) {
     //         // Generate anonymousId
