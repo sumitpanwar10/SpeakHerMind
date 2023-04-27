@@ -27,6 +27,7 @@ export default function MyPosts(): JSX.Element {
                     name={data.id}
                     title={post.title}
                     comment={post.comment}
+                    createdAt={post.createdAt}
                 />
             ))}
         </div>
