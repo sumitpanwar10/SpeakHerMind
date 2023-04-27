@@ -15,7 +15,7 @@ export default function MyPosts(): JSX.Element {
         "getAuthPosts",
         fetchAuthPosts
     )
-    if (isLoading) return <h1>Posts are loading...</h1>
+    if (isLoading) return <div className="text-gray-200">Posts are loading...</div>
     
     return (
         <QueryWrapper>
