@@ -17,7 +17,7 @@ export default function Home() {
     queryKey: ["posts"],
   })
   if (error) return <div>error</div>
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <div className="text-gray-200">Loading...</div>
 
 
   return (
@@ -26,10 +26,11 @@ export default function Home() {
       {data?.map((post) => (
         <Post
           key={post.id.toString()}
-          id={post.id.toString()} 
+          id={post.id.toString()}
           name={post.user.id}
           postTitle={post.title}
-          comment={post.comment} />
+          comment={post.comment} 
+          createdAt={post.createdAt} />
       ))}
     </div>
   )

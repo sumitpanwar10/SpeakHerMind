@@ -33,19 +33,20 @@ export default function PostDetail(url: URL) {
                 name={data?.user.id ?? ''}
                 postTitle={data?.title ?? ''}
                 comment={data?.comment ?? []}
+                createdAt={''}
             />
             <AddComment id={data?.id} />
             {data?.comment?.map((comment) => (
                 <div
-                    className="my-6 bg-white p-8 rounded-md"
+                    className="my-6 bg-gray-800 border border-gray-700 p-6 rounded-md"
                     key={comment.id}
                 >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-between gap-2">
 
-                        <h3 className="font-bold">Whisperer-{comment?.user?.id.substring(0, 5)}</h3>
-                        <h2 className="text-sm">{comment.createdAt}</h2>
+                        <h3 className="font-bold text-sm text-yellow-400">Whisperer-{comment?.user?.id.substring(0, 5)}</h3>
+                        <h2 className="text-xs text-gray-600">{comment?.createdAt?.substring(0, 10)}</h2>
                     </div>
-                    <div className="py-4">{comment.message}</div>
+                    <div className="py-4 text-white text-sm">{comment.message}</div>
                 </div>
             ))}
         </div>

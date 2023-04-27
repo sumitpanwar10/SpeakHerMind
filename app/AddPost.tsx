@@ -42,14 +42,14 @@ export default function CreatePost() {
 
 
     return (
-        <form onSubmit={submitPost} className="bg-white my-8 p-8 rounded-md">
-            <div className="flex flex-col my-4">
+        <form onSubmit={submitPost} className="bg-gray-800 border border-gray-700 my-6 p-6 rounded-lg ">
+            <div className="flex flex-col my-2">
                 <textarea
                     onChange={(e) => setTitle(e.target.value)}
                     name='title'
                     value={title}
                     placeholder="Feel free to confess..."
-                    className="p-4 text-lg rounded-md my-2 bg-gray-200"
+                    className="p-4 text-sm rounded-md my-2 bg-gray-200"
                 >
                 </textarea>
             </div>
@@ -57,7 +57,7 @@ export default function CreatePost() {
             <div>
                 <button
                     disabled={isDisabled}
-                    className="text-sm bg-sky-400 text-white py-2 px-6 rounded-xl disabled:opacity-25"
+                    className="text-sm font-medium bg-sky-400 text-gray-800 py-2 px-6 rounded-xl disabled:opacity-25"
                     type="submit"
                 >
                     Post

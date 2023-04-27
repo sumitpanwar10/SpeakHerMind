@@ -3,7 +3,7 @@ import { Key } from "react"
 export type PostType = {
     id: Key
     title: string
-    createAt: string
+    createdAt: string
     user: {
         name: string
         id: string

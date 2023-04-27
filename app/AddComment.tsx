@@ -49,7 +49,7 @@ export default function AddComment({id}: PostProps){
 
     return(
         <form onSubmit={submitComment} className="my-8">
-            <h1 className="text-yellow-400">Add a comment</h1>
+            <h1 className="text-yellow-400 pt-4">Add a comment</h1>
             <div className="flex flex-col my-4">
                 <input
                     onChange={(e) => setTitle(e.target.value)}
@@ -57,7 +57,7 @@ export default function AddComment({id}: PostProps){
                     type="text"
                     value={title}
                     placeholder="Add your comment here"
-                    className="p-4 text-lg rounded-md my-2 bg-gray-200"
+                    className="p-4 text-sm rounded-md my-2 bg-gray-200"
                 
                 />
             </div>
@@ -65,7 +65,7 @@ export default function AddComment({id}: PostProps){
             <div>
                 <button
                     disabled={isDisabled}
-                    className="text-sm bg-sky-400 text-white py-2 px-6 rounded-xl disabled:opacity-25"
+                    className="text-sm bg-sky-400 font-medium text-gray-800 py-2 px-6 rounded-xl disabled:opacity-25"
                     type="submit"
                 >
                     Comment

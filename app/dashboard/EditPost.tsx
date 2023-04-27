@@ -56,7 +56,7 @@ export default function EditPost({
 
     return (
         <>
-            <div className="bg-white my-8 p-8 rounded-lg">
+            <div className="bg-gray-800 border border-gray-700 my-6 p-6 rounded-md">
 
                 <div className="flex items-center gap-2">
 
