@@ -8,7 +8,7 @@ import axios from "axios"
 import { Url } from "next/dist/shared/lib/router/router"
 import AddComment from "@/app/AddComment"
 import { useSession } from "next-auth/react"
-
+import { useMutation, useQueryClient } from "react-query"
 type URL = {
     params: {
         slug: string
@@ -25,17 +25,18 @@ export default function PostDetail(url: URL) {
         queryKey: ["detail-post"],
         queryFn: () => fetchDetails(url.params.slug),
     })
+    
     // const { data: session } = useSession();
-    if (isLoading) return "Loading"
-    async function deleteComment(id: string) {
-        try {
-            await axios.delete(`/api/comments/${id}`)
-            // Optional: refresh comments after deletion
-        } catch (err) {
-            console.error(err)
-            // Handle error
-        }
-    }
+    if (isLoading) return <div className="text-gray-200">Post is loading...</div>
+    // async function deleteComment(id: string) {
+    //     try {
+    //         await axios.delete(`/api/comments/${id}`)
+    //         // Optional: refresh comments after deletion
+    //     } catch (err) {
+    //         console.error(err)
+    //         // Handle error
+    //     }
+    // }
     return (
         <div>
             <Post
