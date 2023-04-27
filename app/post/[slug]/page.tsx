@@ -25,7 +25,7 @@ export default function PostDetail(url: URL) {
         queryKey: ["detail-post"],
         queryFn: () => fetchDetails(url.params.slug),
     })
-    const { data: session } = useSession();
+    // const { data: session } = useSession();
     if (isLoading) return "Loading"
     async function deleteComment(id: string) {
         try {
@@ -57,14 +57,14 @@ export default function PostDetail(url: URL) {
                         <h2 className="text-xs text-gray-600">{comment?.createdAt?.substring(0, 10)}</h2>
                     </div>
                     <div className="py-4 text-white text-sm">{comment.message}</div>
-                    {session && session.user && comment.user.email === session.user.email && (
+                    {/* {session && session.user && comment.user.email === session.user.email && (
                         <button
                             className="bg-red-500 text-white font-bold py-2 px-4 rounded"
                             onClick={() => deleteComment(comment.id)}
                         >
                             Delete
                         </button>
-                    )}
+                    )} */}
                 </div>
             ))}
         </div>
