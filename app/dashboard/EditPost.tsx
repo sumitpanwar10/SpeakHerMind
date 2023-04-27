@@ -15,6 +15,7 @@ type EditProps = {
     id: string
     name: string
     title: string
+    createdAt: string
     comment?: {
         id: string
         postId: string
@@ -23,7 +24,7 @@ type EditProps = {
 }
 
 export default function EditPost({
-
+    createdAt,
     name,
     title,
     comment,
@@ -56,19 +57,19 @@ export default function EditPost({
 
     return (
         <>
-            <div className="bg-gray-800 border border-gray-700 my-6 p-6 rounded-md">
+            <div className="bg-gray-800 border border-gray-700 my-6 p-6 rounded-lg">
 
-                <div className="flex items-center gap-2">
-
-                    <h3 className="font-bold text-gray-700">Whisperer-{name.substring(0, 5)}</h3>
+                <div className="flex items-center justify-between gap-2">
+                    <h3 className="font-bold text-lg text-yellow-400">Whisperer-{name.substring(0, 5)}</h3>
+                    <h2 className="text-xs text-gray-600">{createdAt.substring(0, 10)}</h2>
                 </div>
                 <div className="my-8 ">
-                    <p className="break-all">{title}</p>
+                    <p className="text-sm text-white break-all">{title}</p>
 
                 </div>
                 <div className="flex items-center justify-between ">
                     <Link href={`/post/${id}`}>
-                    <p className=" text-sm font-bold text-gray-600">
+                        <p className="text-sm font-bold text-sky-400">
                         {comment?.length} Comments
                     </p>
                     </Link>

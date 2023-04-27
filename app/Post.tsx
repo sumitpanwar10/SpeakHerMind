@@ -21,7 +21,7 @@ export default function Post({ id, name, postTitle, comment, createdAt}:PostProp
           {/* <h3 className="font-bold text-gray-700">Anonymous</h3> */}
           
             <h3 className="font-bold text-lg text-yellow-400">Whisperer-{name.substring(0, 5)}</h3>
-          <h2 className="text-xs text-gray-600">{createdAt.substring(0, 10)}</h2>
+            <h2 className="text-xs text-gray-600">{createdAt.substring(0, 10)}</h2>
           
         </div>
         <div className="my-8">
