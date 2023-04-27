@@ -43,7 +43,7 @@ export default function PostDetail(url: URL) {
                 >
                     <div className="flex items-center justify-between gap-2">
 
-                        <h3 className="font-bold text-sm text-yellow-400">Whisperer-{comment?.user?.id.substring(0, 5)}</h3>
+                        <h3 className="font-bold text-sm text-yellow-400">Whisperer-{comment?.user?.id.substring(6, 11)}</h3>
                         <h2 className="text-xs text-gray-600">{comment?.createdAt?.substring(0, 10)}</h2>
                     </div>
                     <div className="py-4 text-white text-sm">{comment.message}</div>
