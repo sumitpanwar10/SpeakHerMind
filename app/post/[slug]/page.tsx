@@ -33,7 +33,7 @@ export default function PostDetail(url: URL) {
                 name={data?.user.id ?? ''}
                 postTitle={data?.title ?? ''}
                 comment={data?.comment ?? []}
-                createdAt={''}
+                createdAt={data?.createdAt ?? ''}
             />
             <AddComment id={data?.id} />
             {data?.comment?.map((comment) => (

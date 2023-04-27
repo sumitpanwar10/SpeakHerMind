@@ -2,6 +2,7 @@ export type PostPageType = {
     id: string
     title: string
     updatedAt?: string
+    createdAt?: string
     user: {
         email: string
         id: string
