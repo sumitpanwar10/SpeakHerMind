@@ -1,3 +1,14 @@
+## About the Project
+
+The project aims to create a safe and anonymous platform where women can share their experiences of social violence without fear of judgment or retaliation.
+
+The project is built with Next.js for frontend, PostgreSQL for database, Prisma as ORM, and Tailwind CSS for styling
+
+The project offers CRUD (Create, Read, Update, Delete) functionality and user authentication.
+
+**[View Deployment](https://speakhermind.vercel.app/)**
+---
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
