@@ -1,4 +1,4 @@
-## About the Project
+## About Project
 
 The project aims to create a safe and anonymous platform where women can share their experiences of social violence without fear of judgment or retaliation.
 
